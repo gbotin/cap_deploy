@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: cap_deploy_production
-  username: cap_deploy
-  password: <%= ENV['CAP_DEPLOY_DATABASE_PASSWORD'] %>
+  username: geo
+  password: geogeo89
