@@ -1,15 +1,11 @@
 # config valid only for current version of Capistrano
 lock '3.4.0'
 
-set :application, 'cap_deploy'
 set :repo_url, 'git@github.com:gbotin/cap_deploy.git'
 
 # Default branch is :master
 set :branch, 'formation-1'
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
-
-# Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, "/home/deploy/#{fetch(:application)}"
 
 # Default value for :scm is :git
 set :scm, :git
@@ -40,6 +36,9 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
+
+set :unicorn_pid, "#{shared_path}/tmp/pids/unicorn.pid"
+set :unicorn_config, "config/unicorn.rb"
 
 namespace :deploy do
 

@@ -1,6 +1,4 @@
-# Default deploy_to directory is /var/www/my_app_name
-
-set :application, 'cap_deploy'
+set :application, 'cap_deploy_staging'
 set :deploy_to, "/home/deploy/#{fetch(:application)}"
 
 server '192.168.1.25', user: 'deploy', roles: %w{app db web assets}
